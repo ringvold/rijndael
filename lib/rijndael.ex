@@ -1,18 +1,13 @@
 defmodule Rijndael do
-  @moduledoc """
-  Documentation for `Rijndael`.
-  """
+  version = Mix.Project.config()[:version]
 
-  @doc """
-  Hello world.
+  use RustlerPrecompiled,
+    otp_app: :rijndael,
+    crate: "rijndael",
+    base_url: "https://github.com/ringvold/rijndael/releases/download/v#{version}",
+    version: version
 
-  ## Examples
 
-      iex> Rijndael.hello()
-      :world
-
-  """
-  def hello do
-    :world
-  end
+  # When your NIF is loaded, it will override this function.
+  def decrypt(_a, _b), do: :erlang.nif_error(:nif_not_loaded)
 end
