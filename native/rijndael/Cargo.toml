@@ -1,0 +1,18 @@
+[package]
+name = "rijndael"
+version = "0.1.0"
+authors = []
+edition = "2021"
+
+[lib]
+name = "rijndael"
+path = "src/lib.rs"
+crate-type = ["cdylib"]
+
+[dependencies]
+rustler = "0.30.0"
+simple-rijndael = "0.3.2"
+base64 = "0.21.7"
+hmac = "0.12.1"
+pbkdf2 = { version = "0.12.2", features = ["sha1"] }
+sha1 = "0.10.6"
