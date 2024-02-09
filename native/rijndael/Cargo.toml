@@ -10,9 +10,16 @@ path = "src/lib.rs"
 crate-type = ["cdylib"]
 
 [dependencies]
-rustler = { version = "0.30", default-features = false, features = ["derive", "nif_version_2_16"] }
+rustler = { version = "0.30", default-features = false, features = ["derive"] }
 simple-rijndael = "0.3.2"
 base64 = "0.21.7"
 hmac = "0.12.1"
 pbkdf2 = { version = "0.12.2", features = ["sha1"] }
 sha1 = "0.10.6"
+
+
+[features]
+default = ["nif_version_2_15"]
+nif_version_2_15 = ["rustler/nif_version_2_15"]
+nif_version_2_16 = ["rustler/nif_version_2_16"]
+nif_version_2_17 = ["rustler/nif_version_2_17"]
