@@ -4,7 +4,7 @@ defmodule Rijndael do
   use RustlerPrecompiled,
     otp_app: :rijndael,
     crate: "rijndael",
-    base_url: "https://***REMOVED***github.com/ringvold/rijndael/releases/download/v#{version}",
+    base_url: "https://github.com/ringvold/rijndael/releases/download/v#{version}",
     version: version
 
 
